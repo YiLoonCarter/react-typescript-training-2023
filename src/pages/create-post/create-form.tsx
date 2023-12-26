@@ -34,11 +34,11 @@ export const CreateForm = () => {
       navigate("/");
     }
     return (
-      <div>
+      <div className='create-post'>
         <form onSubmit={handleSubmit(onCreatePost)}>
-          <input placeholder='Title...' {...register("title")}/>
+          <input width={"300px"} placeholder='Title...' {...register("title")}/>
           <p style={{color: "red"}}>{errors.title?.message}</p>
-          <textarea placeholder='Description...' {...register("description")}/>
+          <textarea rows={4} style={{width: "300px"}} placeholder='Description...' {...register("description")}/>
           <p style={{color: "red"}}>{errors.description?.message}</p>
           <input type='Submit' />
         </form>

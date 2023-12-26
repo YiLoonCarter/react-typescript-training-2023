@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
+import { Navbar as BsNavBar, Container, Nav } from "react-bootstrap";
 export const Navbar = () => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
@@ -9,17 +10,22 @@ export const Navbar = () => {
         await signOut(auth);
         navigate("/");
     }
-    return ( 
-        <div className="navbar">
-          <div className="links">
-            <Link to="/"> Home </Link>
-            {user && <Link to="/main"> Main </Link>}
+    return (
+        <BsNavBar className="bg-body-tertiary" expand="lg">
+          <Container>          
+          <BsNavBar.Toggle aria-controls="basic-navbar-nav" />
+          <BsNavBar.Collapse id="basic-navbar-nav">
+          <Nav className="links me-auto">
+          <Nav.Link><Link to="/"> Home </Link></Nav.Link>
+            {user && <Nav.Link><Link to="/main"> Main </Link></Nav.Link>}
             {!user ? 
-            (<Link to="/login"> Login </Link>)
+            (<Nav.Link><Link to="/login"> Login </Link></Nav.Link>)
             :                        
-            (<Link to="/createpost"> Create Post </Link>)
+            (<Nav.Link><Link to="/createpost"> Create Post </Link></Nav.Link>)
             }
-          </div>
+            
+          </Nav>
+          </BsNavBar.Collapse>
           <div className="user">
             {user && (
               <>
@@ -29,7 +35,8 @@ export const Navbar = () => {
               </>
             )}
           </div>
-        </div>        
+          </Container>
+        </BsNavBar>         
     );
 }
 

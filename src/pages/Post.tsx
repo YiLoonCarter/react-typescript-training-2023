@@ -3,6 +3,9 @@ import { db, auth } from "../config/firebase";
 import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect, useState } from "react";
+import { Accordion } from "react-bootstrap";
+
+
 interface Props {
     post: IPost;
 }
@@ -61,15 +64,17 @@ export const Post = (props: Props) => {
     useEffect(() => {
         getLikes();
     }, []);
-    return (
-        <div>
-            <div className="title"><h1>{post.title}</h1></div>
-            <div className="body"><p>{post.description}</p></div>
-            <div className="footer">
+    return (       
+        <Accordion.Item eventKey={post.idx.toString()}>
+            <Accordion.Header>
+                <h2>{post.title}</h2>
+            </Accordion.Header>
+            <Accordion.Body>
+                <p>{post.description}</p>
                 <p>@{post.username}</p>
-                <button onClick={hasUserLiked ? onRemoveLike : onAddLike}> { hasUserLiked ? (<>&#128078;</>) : (<>&#128077;</>) }</button>
-                {likeCount && (<p> Likes : {likeCount?.length}</p>)}
-            </div>
-        </div>
+                    <button onClick={hasUserLiked ? onRemoveLike : onAddLike}> { hasUserLiked ? (<>&#128078;</>) : (<>&#128077;</>) }</button>
+                    {likeCount && (<p> Likes : {likeCount?.length} </p>)}
+            </Accordion.Body>
+        </Accordion.Item>     
     )
 }
