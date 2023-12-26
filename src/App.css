@@ -88,3 +88,98 @@ form {
     transform: rotate(360deg);
   }
 }
+
+.heart {
+  color: white;
+  background-color: currentColor;
+  display: inline-block;
+  height: 10px;
+  margin: 0 10px;
+  position: relative;
+  transform: rotate(-45deg);
+  width: 10px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  z-index: 2;
+}
+
+.heart-checkbox {
+  display: none;
+}
+
+.heart:before {
+  content: "";
+  background-color: currentColor;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  z-index: -2;
+  border: 1px solid transparent;
+  transform: rotate(45deg);
+}
+
+.heart:after {
+  content: "";
+  background-color: currentColor;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  z-index: -2;
+  border: 1px solid transparent;
+  transform: rotate(-45deg);
+}
+
+.heart:before {
+  top: -4px;
+  left: -1px;
+  border-top-color: black;
+  border-left-color: black;
+}
+
+.heart:after {
+  left: 3px;
+  top: 0px;
+  border-right-color: black;
+  border-bottom-color: black;
+}
+
+.heart-checkbox:checked + .heart {
+  color: red;
+}
+
+
+.heart2 {
+  width:20px;
+  height:20px;
+  background:
+   radial-gradient(80% 80% at 70% 65%, transparent calc(69% - 1px), black 69%, transparent calc(69% + 1px)) top left,
+   radial-gradient(80% 80% at 30% 65%, transparent calc(69% - 1px), black 69%, transparent calc(69% + 1px)) top right,
+   linear-gradient(to bottom left,     transparent calc(37% - 1px), black 37%, transparent calc(37% + 1px)) bottom left ,
+   linear-gradient(to bottom right,    transparent calc(37% - 1px), black 37%, transparent calc(37% + 1px)) bottom right;
+  background-size:50% 50%;
+  background-repeat:no-repeat;
+  overflow:hidden;
+  resize:none;
+}
+
+.heart-checkbox2 {
+  display: none;
+}
+
+.heart2Red,
+.heart-checkbox2:checked + .heart2 {
+  width:20px;
+  height:20px;
+  background:
+   radial-gradient(90% 90% at 60% 65%, red calc(64% - 1px), black 64%, transparent calc(64% + 1px)) top left,
+   radial-gradient(90% 90% at 40% 65%, red calc(64% - 1px), black 64%, transparent calc(64% + 1px)) top right,
+   linear-gradient(to bottom left,     red calc(43% - 1px), black 43%, transparent calc(43% + 1px)) bottom left ,
+   linear-gradient(to bottom right,    red calc(43% - 1px), black 43%, transparent calc(43% + 1px)) bottom right;
+  background-size:50% 50%;
+  background-repeat:no-repeat;
+  overflow:hidden;
+  resize:none;
+  
+}

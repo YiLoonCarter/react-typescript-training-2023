@@ -72,8 +72,17 @@ export const Post = (props: Props) => {
             <Accordion.Body>
                 <p>{post.description}</p>
                 <p>@{post.username}</p>
-                    <button onClick={hasUserLiked ? onRemoveLike : onAddLike}> { hasUserLiked ? (<>&#128078;</>) : (<>&#128077;</>) }</button>
-                    {likeCount && (<p> Likes : {likeCount?.length} </p>)}
+                    <button style={{border: "none"}} onClick={hasUserLiked ? onRemoveLike : onAddLike}>
+                        { hasUserLiked ? (<>&#128078;</>) : (<>&#128077;</>) }                     
+                    </button>
+                    {likeCount && ( <>Likes : {likeCount?.length}</>)}                
+                <p style={{padding: "5px"}}>
+                    <button style={{border: "none",marginLeft: "10px", marginRight: "6px", backgroundColor: "buttonface"}} 
+                            onClick={hasUserLiked ? onRemoveLike : onAddLike}
+                            className={hasUserLiked ?  "heart2Red" : "heart2"}> 
+                    </button>
+                    {likeCount && ( <>Loves : {likeCount?.length}</>)} 
+                </p>
             </Accordion.Body>
         </Accordion.Item>     
     )
