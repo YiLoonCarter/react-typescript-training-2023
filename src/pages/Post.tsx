@@ -94,12 +94,12 @@ export const Post = (props: Props) => {
             <Accordion.Body>
                 <p>{post.description}</p>
                 <p>@{post.username}</p>
-                    <button style={{border: "none"}} onClick={hasUserLiked ? () => onRemoveLike(emojiCode.eLike) : () => onAddLike(emojiCode.eLike)}>
+                    <button style={{border: "none", backgroundColor: "transparent"}} onClick={hasUserLiked ? () => onRemoveLike(emojiCode.eLike) : () => onAddLike(emojiCode.eLike)}>
                         { hasUserLiked ? (<>&#128078;</>) : (<>&#128077;</>) }                     
                     </button>
                     {likeCount && ( <>Likes : {likeCount?.length}</>)}                
                 <p style={{padding: "5px"}}>
-                    <button style={{border: "none",marginLeft: "10px", marginRight: "6px", backgroundColor: "buttonface"}} 
+                    <button style={{border: "none",marginLeft: "10px", marginRight: "6px", backgroundColor: "transparent"}} 
                             onClick={hasUserLoved ? () => onRemoveLike(emojiCode.eLove) : () => onAddLike(emojiCode.eLove)}
                             className={hasUserLoved ?  "heart2Red" : "heart2"}> 
                     </button>
