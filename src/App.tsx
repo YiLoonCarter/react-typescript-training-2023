@@ -12,6 +12,7 @@ import { Login } from './pages/Login';
 import { Navbar } from './components/Navbar';
 import { CreatePost } from './pages/create-post/create-post';
 import { Home } from './pages/Home';
+import { Chatroom } from './components/Chatroom';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/main" element={<Main />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/createpost" element={<CreatePost />}/>
+          <Route path="/chatroom" element={<Chatroom />}/>
         </Routes>
       </Router>
     </div>
