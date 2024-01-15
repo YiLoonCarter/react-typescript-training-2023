@@ -181,5 +181,9 @@ form {
   background-repeat:no-repeat;
   overflow:hidden;
   resize:none;
-  
+}
+
+.imgupload {
+  width: 300px;
+  margin: 10px;
 }

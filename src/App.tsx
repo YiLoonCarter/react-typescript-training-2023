@@ -13,6 +13,7 @@ import { Navbar } from './components/Navbar';
 import { CreatePost } from './pages/create-post/create-post';
 import { Home } from './pages/Home';
 import { Chatroom } from './components/Chatroom';
+import { ImageUpload } from './pages/ImageUpload';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="/main" element={<Main />}/>
           <Route path="/login" element={<Login />}/>
+          <Route path="/imgupload" element={<ImageUpload />}/>
           <Route path="/createpost" element={<CreatePost />}/>
           <Route path="/chatroom" element={<Chatroom />}/>
         </Routes>
