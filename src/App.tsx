@@ -14,6 +14,8 @@ import { CreatePost } from './pages/create-post/create-post';
 import { Home } from './pages/Home';
 import { Chatroom } from './components/Chatroom';
 import { ImageUpload } from './pages/ImageUpload';
+import { ProductInventory } from './pages/ProductInventory';
+import { Products } from './pages/Products';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path="/main" element={<Main />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/imgupload" element={<ImageUpload />}/>
+          <Route path="/prodinv" element={<ProductInventory/>}/>
+          <Route path="/prodlist" element={<Products/>}/>
           <Route path="/createpost" element={<CreatePost />}/>
           <Route path="/chatroom" element={<Chatroom />}/>
         </Routes>
