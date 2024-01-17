@@ -16,6 +16,7 @@ import { Chatroom } from './components/Chatroom';
 import { ImageUpload } from './pages/ImageUpload';
 import { ProductInventory } from './pages/ProductInventory';
 import { Products } from './pages/Products';
+import { ShoppingCart } from './pages/ShoppingCart';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/imgupload" element={<ImageUpload />}/>
           <Route path="/prodinv" element={<ProductInventory/>}/>
           <Route path="/prodlist" element={<Products/>}/>
+          <Route path="/shoppingcart" element={<ShoppingCart/>}/>
           <Route path="/createpost" element={<CreatePost />}/>
           <Route path="/chatroom" element={<Chatroom />}/>
         </Routes>

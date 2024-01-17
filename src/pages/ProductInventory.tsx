@@ -40,7 +40,7 @@ export const ProductInventory = () => {
                     photo: url,
                     userId: user?.uid,
                   });
-                  navigate("/");
+                  navigate("/prodlist");
             })        
           })
         

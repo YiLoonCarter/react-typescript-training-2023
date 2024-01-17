@@ -22,6 +22,7 @@ export const Navbar = () => {
             {user && <Nav.Link><Link to="/imgupload"> Image Upload </Link></Nav.Link>}
             {user && <Nav.Link><Link to="/prodinv"> Product Inventory </Link></Nav.Link>}
             {user && <Nav.Link><Link to="/prodlist"> Products List </Link></Nav.Link>}
+            {user && <Nav.Link><Link to="/shoppingcart"> Shopping Cart </Link></Nav.Link>}
             {!user ? 
             (<Nav.Link><Link to="/login"> Login </Link></Nav.Link>)
             :                        
