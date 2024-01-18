@@ -57,6 +57,7 @@ export const Products = () => {
             userId: user?.uid,
           })
           .then(() => {
+                getShopCarts();
                 setMessage("Product added to the shopping cart successfully");
           }).catch((error:any) => {
                 setMessage(error);
@@ -116,9 +117,9 @@ export const Products = () => {
         </div>
         <div className="row">
         {
-            productsList?.map((product) => {
+            productsList?.map((product,index) => {
                 return (
-                    <div className="col-md-4" style={{ paddingBottom:"20px", paddingTop:"20px" }}>
+                    <div key={index} className="col-md-4" style={{ paddingBottom:"20px", paddingTop:"20px" }}>
                         <div className="card">
                             <img src={ product.photo } className="card-img-top" 
                                 alt={ product.name }/>

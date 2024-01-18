@@ -23,8 +23,12 @@ export const ShoppingCartItem = (props:any) => {
                     onChange={(event) => {
                         setRequiredQuantity(parseInt(event.target.value))
                     }}/>&nbsp;
-                <button className="btn btn-primary">Update</button>&nbsp;
-                <button className="btn btn-danger">Delete</button>
+                <button className="btn btn-primary"
+                onClick={props.updateclick.bind(null, props.item, 
+                requiredQuantity)} 
+                disabled={props.item.quantity < requiredQuantity}>Update</button>&nbsp;
+                <button className="btn btn-danger" 
+                onClick={props.deleteclick.bind(null, props.item.name)}>Delete</button>
             </td>
         </tr>
     )
